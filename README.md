@@ -1,28 +1,33 @@
-# SPA
+# CRUD Aves - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+Angular frontend for a simple **CRUD application to manage birds ("aves")**. It lists, creates, edits and deletes bird records, filterable by country/zone, and talks to a REST backend (`crud-aves-backend`) originally hosted on Cloud9 (`https://crud-aves-backend-alejo86a.c9users.io/`).
 
-## Development server
+## What it is
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- `AveComponent`: form/view to create or edit a bird (`operacion` input: crear/editar), fetching the list of countries (`PaisesService`) to populate a dropdown.
+- `AvesService`: HTTP client wrapping the backend endpoints (`get`, `delete`, `getPorZonas`, `getPorId`, `getPorNombre`).
+- `HomeComponent` and a shared `navbar` component for the app shell.
+- Generated with Angular CLI (Angular 4.2 / Angular CLI 1.3.2), using Bootstrap 4 (beta), jQuery, Chartist, SweetAlert and bootstrap-notify/switch/table for UI.
 
-## Code scaffolding
+## Tech stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 4
+- Angular CLI 1.3.2
+- TypeScript
+- Bootstrap 4 (beta), jQuery, Chartist, SweetAlert
+- Jasmine/Karma for unit tests, Protractor for e2e
 
-## Build
+## Running the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```bash
+npm install
+npm start      # ng serve, app at http://localhost:4200/
+npm test       # unit tests via Karma
+npm run e2e    # end-to-end tests via Protractor
+```
 
-## Running unit tests
+Note: the app points to a now-likely-defunct Cloud9-hosted backend URL; a working backend (`crud-aves-backend`) is required for data to load.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Context
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Looks like a personal/practice full-stack CRUD exercise (frontend + separate backend repo) built to practice Angular fundamentals (components, services, routing, HTTP) with a simple domain (bird records). Not a production app.
